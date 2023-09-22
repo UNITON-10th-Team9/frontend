@@ -20,7 +20,7 @@ jobs:
         with:
           source-directory: '.'
           destination-github-username: guesung
-          destination-repository-name: gloddy-client-publishing
+          destination-repository-name: unithon-client-publish
           user-email: gueit214@naver.com
           commit-message: ${{ github.event.commits[0].message }}
           target-branch: feature
