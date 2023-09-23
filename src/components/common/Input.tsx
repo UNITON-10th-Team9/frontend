@@ -10,13 +10,13 @@ interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "onChange"> {
 }
 
 const Input = ({ size, value, onChange, ...arg }: Props) => {
-  const handeChane = (e: ChangeEvent<HTMLInputElement>) => {
+  const handeChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
   };
 
   return (
     <Wrapper size={size}>
-      <BaseInput size={size} value={value} onChange={handeChane} {...arg} />
+      <BaseInput size={size} value={value} onChange={handeChange} {...arg} />
     </Wrapper>
   );
 };
