@@ -5,7 +5,7 @@ import { DUMMY_CARD_LIST } from "@/constants/DUMMY_DATA";
 import { Spacing } from "@/styles/Spacing";
 import styled from "styled-components";
 
-export default function page() {
+export default function Page() {
   return (
     <WebAppLayout backgroundcolor="#F2F4FB">
       <TitleMiddle>명함 목록</TitleMiddle>
