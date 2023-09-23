@@ -1,7 +1,11 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export default function Badge({ active, children }: { active?: boolean; children: React.ReactNode }) {
-  return <StyledBadge active={active}>{children}</StyledBadge>;
+export default function Badge({ active, children, ...props }: { active?: boolean; children: React.ReactNode }) {
+  return (
+    <StyledBadge active={active} {...props}>
+      {children}
+    </StyledBadge>
+  );
 }
 
 const StyledBadge = styled.span<{ active?: boolean }>`
@@ -11,11 +15,11 @@ const StyledBadge = styled.span<{ active?: boolean }>`
   // @TODO: colors should be defined in theme
   ${props =>
     props.active
-      ? css`
+      ? `
           background-color: #f2f4fb;
           color: #4473f5;
         `
-      : css`
+      : `
           background-color: #f2f2f2;
           color: #585858;
         `}
