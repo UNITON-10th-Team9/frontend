@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
  * time -> 02:00:00
  * ```
  */
-export default function useTimer({ remainedTime }: { remainedTime: number; period?: number }) {
+export default function useTimer({ remainedTime }: { remainedTime: number }) {
   const [time, setTime] = useState(remainedTime);
 
   useEffect(() => {
