@@ -13,19 +13,13 @@ export default function Avatar({
   position?: Position;
   uploadButton?: boolean;
 } & HTMLAttributes<HTMLDivElement>) {
-  const positionAvatar =
-    position === "FRONT_END" || position === "BACK_END" || position === "ANDROID" || position === "IOS"
-      ? "developer"
-      : position === "DESIGN"
-      ? "designer"
-      : position === "ETC"
-      ? "etc"
-      : undefined;
+  const isPositionDeveloper =
+    position === "FRONT_END" || position === "BACK_END" || position === "ANDROID" || position === "IOS";
 
   return (
     <StyledAvatarWrapper {...props}>
       <StyledPositionIconWrapper>
-        {profileImageUrl && (
+        {profileImageUrl ? (
           <Image
             src={profileImageUrl}
             alt="profile image"
@@ -36,10 +30,13 @@ export default function Avatar({
               objectFit: "cover",
             }}
           />
+        ) : isPositionDeveloper ? (
+          <DeveloperIcon />
+        ) : position === "DESIGN" ? (
+          <DesignerIcon />
+        ) : (
+          <ETCIcon />
         )}
-        {positionAvatar === "developer" && <DeveloperIcon />}
-        {positionAvatar === "designer" && <DesignerIcon />}
-        {positionAvatar === "etc" && <ETCIcon />}
       </StyledPositionIconWrapper>
       {uploadButton && (
         <StyledUploadIconWrapper>
