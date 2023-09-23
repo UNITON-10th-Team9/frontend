@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Refresh from "./icon/Refresh";
 import Close from "./icon/Close";
 import { Spacing } from "@/styles/Spacing";
+import Button from "./common/Button";
+import BottomFixedDiv from "./BottomFixedDiv";
 
 const TAG_ANNUAL_LIST = ["연차 높은 순", "연차 낮은 순"];
 
@@ -67,6 +69,9 @@ export default function FilterBottomSheet() {
               ))}
             </TagList>
             <Spacing size={30} />
+            <BottomFixedDiv>
+              <Button size="medium" label="시작하기" />
+            </BottomFixedDiv>
           </Sheet.Content>
         </SheetContainerWrapper>
         <Sheet.Backdrop />
@@ -75,7 +80,13 @@ export default function FilterBottomSheet() {
   );
 }
 
-const SheetWrapper = styled(Sheet)``;
+const SheetWrapper = styled(Sheet)`
+  max-width: 40rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const SheetContainerWrapper = styled(Sheet.Container)`
   border-top-left-radius: 3rem !important;
@@ -132,3 +143,5 @@ const Tag = styled.span<{ isSelected: boolean }>`
   padding-bottom: 0.85rem;
   border-radius: 2rem;
 `;
+
+
