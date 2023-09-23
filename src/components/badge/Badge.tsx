@@ -1,6 +1,11 @@
+import { HTMLAttributes } from "react";
 import styled from "styled-components";
 
-export default function Badge({ active, children, ...props }: { active?: boolean; children: React.ReactNode }) {
+export default function Badge({
+  active,
+  children,
+  ...props
+}: { active?: boolean; children: React.ReactNode } & HTMLAttributes<HTMLSpanElement>) {
   return (
     <StyledBadge active={active} {...props}>
       {children}
