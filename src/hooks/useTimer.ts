@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
 
+/**
+ *
+ * ```ts
+ * const time = useTimer({ remainedTime: 60 * 60 * 2 });
+ *
+ * time -> 02:00:00
+ * ```
+ */
 export default function useTimer({ remainedTime }: { remainedTime: number; period?: number }) {
   const [time, setTime] = useState(remainedTime);
 
